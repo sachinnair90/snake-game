@@ -22,9 +22,32 @@ export default {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## TODO work:
+
+- Split play-area into grid with each cell equal to base-snake body unit
+- Changeable grid-unit and base-snake body unit (default: 0.5rem)
+- Abstract calculation to the grid unit, instead of actual pixels, write a translation layer
+- Add a game flow manager, manages collision boundary calulation, score calulation, food renewal etc.
+  - Maybe add small independent managers/controllers for each task above
+- Design end-game scenarios
+  - Self collision (fail-case)
+  - Boundary collision (fail-case)
+  - Grid full snake body (success case)
+  - more?
+- Test performance!
+
+## Grunt work
+
+- Error on default exports using eslint
+
+### D-day work
+
+- Add Readme content
+- Simple hosting

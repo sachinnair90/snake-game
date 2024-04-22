@@ -1,16 +1,13 @@
-import PlayArea from "./components/play-area"
+import { PlayArea } from "./components";
 
-const App = () => {
-
+export const App = () => {
   return (
     <>
       <main className="container flex items-center justify-center">
-        <section className="flex items-center justify-center p-5 h-full w-full">
+        <section className="flex items-center justify-center p-5 h-full w-full flex-col">
           <PlayArea></PlayArea>
         </section>
       </main>
     </>
-  )
-}
-
-export default App
+  );
+};
