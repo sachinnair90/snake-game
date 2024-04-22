@@ -2,7 +2,7 @@
 import { FullPosition } from '../models';
 import { Snake } from './snake.component';
 import { Food } from './food.component';
-import { GameDataProvider } from '../providers';
+import { GameController } from '../providers';
 import { useState, useRef, useEffect } from 'react';
 
 export const PlayArea = () => {
@@ -11,11 +11,6 @@ export const PlayArea = () => {
   const elementRef = useRef<HTMLDivElement>(null);
 
   const PLAY_AREA_ELEM_ID = 'play-area';
-
-  // TODO: Random food positions
-  // TODO: Grow on eating food
-
-  // TODO: Score calculation
 
   useEffect(() => {
     if (elementRef.current) {
@@ -69,10 +64,10 @@ export const PlayArea = () => {
         tabIndex={1}
         onKeyUp={onKeyUp}
       >
-        <GameDataProvider movementDirection={key} playAreaPosition={playAreaPosition}>
+        <GameController movementDirection={key} playAreaPosition={playAreaPosition}>
           <Snake />
           <Food />
-        </GameDataProvider>
+        </GameController>
       </div>
     </>
   );
